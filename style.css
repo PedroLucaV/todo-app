@@ -31,7 +31,7 @@
     background-image: url('./images/bg-desktop-dark.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 30vh;
+    height: 35vh;
 }
 
 .bg-top-l{
@@ -52,7 +52,7 @@ body{
 }
 
 .container {
-    width: 500px;
+    width: 650px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -88,7 +88,7 @@ main{
     background-color: var(--Very-Dark-Desaturated-Blue);
     color: var(--Light-Grayish-Blue);
     border: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 1rem 1rem 1rem 3.2rem;
     caret-color: var(--Bright-Blue);
 }
@@ -123,14 +123,18 @@ main{
     background-image: linear-gradient(var(--Very-Light-Gray-L)), radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
+.taskInp-l>ul>li>div>span:active, .taskInp-l>span:active {
+    background-image: linear-gradient(to left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
 .newTask{
     display: flex;
     align-items: center;
 }
 
 .newTask .checkmark{
-    width: 1rem;
-    height: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
     margin-left: 1rem;
     position: absolute;
 }
@@ -149,6 +153,7 @@ main{
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .listItem div{
@@ -173,8 +178,8 @@ main{
 .checkmark {
     display: inline-flex;
     border: solid 1px var(--Dark-Grayish-Blue);
-    width: 1rem;
-    height: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
     background-color: var(--Very-Dark-Desaturated-Blue);
     border-radius: 100%;
 }
@@ -187,10 +192,14 @@ main{
     background-clip: content-box, border-box;
 }
 
+.checkmark:active{
+    background-image: linear-gradient(to left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
 .foot{
     display: flex;
     color: var(--Dark-Grayish-Blue);
-    font-size: 0.8rem;
+    font-size: 1rem;
     justify-content: space-between;
     padding: 1.5rem;
     font-weight: 600;
@@ -200,20 +209,125 @@ main{
     cursor: pointer;
 }
 
-.foot>div{
+.foot>.func-desk{
     display: flex;
     gap: 1rem;
 }
 
-.foot .clear:hover, .foot div p:hover{
+.foot .func-desk p:hover{
     cursor: pointer;
     color: var(--Light-Grayish-Blue);
 }
 
-.left{
+.left, .clear{
     color: var(--Very-Dark-Grayish-Blue-1);
 }
 
-.foot-l .clear:hover, .foot-l div p:hover{
+.foot-l .func-desk p:hover{
     color: var(--Bright-Blue);
+}
+
+.mobile-func{
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .container{
+        width: 90vw;
+    }
+
+    .listItem{
+        font-size: 1rem;
+    }
+
+    .checkmark{
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .newTask .checkmark{
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .foot{
+        font-size: 0.8rem;
+    }
+
+    .taskInp{
+        font-size: 1rem;
+    }
+
+    .cross{
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .listItem {
+            font-size: 0.9rem;
+        }
+    
+        .checkmark {
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+    
+        .newTask .checkmark {
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+    
+        .foot {
+            font-size: 0.8rem;
+        }
+    
+        .taskInp {
+            font-size: 0.9rem;
+        }
+    
+        .cross {
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+        
+    .foot>.func-desk {
+        display: none;
+        gap: 1rem;
+    }
+
+    .mobile-func{
+        display: flex;
+        width: 100%;
+        border-radius: 10px;
+        padding: 1rem;
+        background-color: var(--Very-Dark-Desaturated-Blue);
+    }
+
+    .mobile-func>ul{
+        display: flex;
+        font-size: 1rem;
+        flex-direction: row;
+        list-style: none;
+        align-items: center;
+        color: var(--Dark-Grayish-Blue);
+        font-weight: 600;
+        width: 100%;
+        justify-content: space-around;
+        height: 1rem;
+    }
+
+    .mobile-func li:hover {
+        cursor: pointer;
+        color: var(--Light-Grayish-Blue);
+    }
+
+    .mob-func-l{
+        background-color: var(--Very-Light-Gray-L);
+    }
+
+    .mob-func-l ul li:hover {
+        color: var(--Bright-Blue);
+    }
 }

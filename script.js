@@ -4,6 +4,7 @@ const body = document.body;
 const taskCont = document.getElementById('taskCont');
 const taskConn = document.getElementById('taskConn');
 const checkBtn = document.getElementById('checkBtn');
+const mobFunc =  document.getElementById('mob-func');
 const foot = document.getElementById('foot');
 
 changeTheme.addEventListener('click', () => {
@@ -15,6 +16,7 @@ changeTheme.addEventListener('click', () => {
         taskConn.classList.add('taskInp-l')
         checkBtn.classList.add('taskInp-l')
         foot.classList.add('foot-l');
+        mobFunc.classList.add('mob-func-l')
     }else{
         changeTheme.src = '/images/icon-sun.svg'
         bgTop.classList.remove('bg-top-l')
@@ -22,5 +24,6 @@ changeTheme.addEventListener('click', () => {
         taskCont.classList.remove('taskInp-l')
         taskConn.classList.remove('taskInp-l')
         checkBtn.classList.remove('taskInp-l')
+        mobFunc.classList.remove('mob-func-l')
     }
 })
