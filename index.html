@@ -8,7 +8,7 @@
   <title>Frontend Mentor | Todo app</title>
 </head>
 <body>
-  <div class="bg-top">
+  <div id="bg-top" class="bg-top">
   </div>
   <div class="container">
     <header>
@@ -17,19 +17,58 @@
     </header>
 
     <main>
-      <div class="newTask">
-        <input placeholder="Create a new todo..." class="taskInp" type="text" name="" id="">
+      <div id="checkBtn" class="newTask">
+        <span class="checkmark"></span>
+        <input placeholder="Create a new todo..." class="taskInp" type="text" name=" "id="taskCont">
       </div>
 
-      <div class="tasks">
+      <div  id="taskConn" class="tasks">
         <ul class="tasks-list">
-          <li class="listItem">a</li>
-          <li class="listItem">b</li>
-          <li class="listItem">c</li>
-          <li class="listItem">d</li>
-          <li class="listItem">e</li>
+          <li  class="listItem">
+            <div>
+              <span id="" class="checkmark"></span>
+              <p>Complete online JavaScript course</p>
+            </div>
+            <img src="/images/icon-cross.svg" class="cross" alt="" srcset="">
+
+          </li>
+          <li class="listItem">
+            <div>
+              <span id="" class="checkmark"></span>
+              <p>Jag around the park 3x</p>
+            </div>
+            <img src="/images/icon-cross.svg" class="cross" alt="" srcset="">
+          </li>
+          <li class="listItem">
+            <div>
+              <span id="" class="checkmark"></span>
+              <p>10 minutes meditation</p>
+            </div>
+            <img src="/images/icon-cross.svg" class="cross" alt="" srcset="">
+          </li>
+          <li class="listItem">
+            <div>
+              <span id="" class="checkmark"></span>
+              <p>Read for 1 hour</p>
+            </div>
+            <img src="/images/icon-cross.svg" class="cross" alt="" srcset="">
+          </li>
+          <li class="listItem">
+            <div>
+              <span id="" class="checkmark"></span>
+              <p>Pick up groceries</p>
+            </div>
+            <img src="/images/icon-cross.svg" class="cross" alt="" srcset="">
+          </li>
+          <li class="listItem">
+            <div>
+              <span id="" class="checkmark"></span>
+              <p>Complete Todo App on Frontend Mentor</p>
+            </div>
+            <img src="/images/icon-cross.svg" class="cross" alt="" srcset="">
+          </li>
         </ul>
-        <div class="foot">
+        <div id="foot" class="foot">
           <p class="left"><span id="lefts">5</span> items left</p>
           <div>
             <p id="all">All</p>
@@ -41,5 +80,6 @@
       </div>
     </main>
   </div>
+  <script defer src="./script.js"></script>
 </body>
 </html>

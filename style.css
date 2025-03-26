@@ -1,6 +1,5 @@
 :root{
     --Bright-Blue: hsl(220, 98%, 61%);
-    --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 
     --Very-Light-Gray-L: hsl(0, 0%, 98%);
     --Very-Light-Grayish-Blue-L: hsl(236, 33%, 92%);
@@ -11,7 +10,7 @@
     --Very-Dark-Blue: hsl(235, 21%, 11%);
     --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
     --Light-Grayish-Blue: hsl(234, 39%, 85%);
-    --Light-Grayish-Blue-hover: hsl(236, 33%, 92);
+    --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
     --Dark-Grayish-Blue: hsl(234, 11%, 52%);
     --Very-Dark-Grayish-Blue-1: hsl(233, 14%, 35%);
     --Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
@@ -35,6 +34,10 @@
     height: 30vh;
 }
 
+.bg-top-l{
+    background-image: url('./images/bg-desktop-light.jpg');
+}
+
 body{
     background-color: var(--Very-Dark-Blue);
     display: flex;
@@ -44,18 +47,32 @@ body{
     justify-content: center;
 }
 
-.container{
+.body-l{
+    background-color: var(--Very-Light-Grayish-Blue-L);
+}
+
+.container {
     width: 500px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
+.container-task{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
 
 header{
     display: flex;
     justify-content: space-between;
     color: white;
+}
+
+header>h1{
+    letter-spacing: 1rem;
 }
 
 main{
@@ -66,12 +83,18 @@ main{
 }
 
 .taskInp{
+    border-radius: 10px;
     width: 100%;
     background-color: var(--Very-Dark-Desaturated-Blue);
-    color: var(--Dark-Grayish-Blue);
+    color: var(--Light-Grayish-Blue);
     border: none;
     font-size: 1rem;
-    padding: 1rem 1rem 1rem 4rem;
+    padding: 1rem 1rem 1rem 3.2rem;
+    caret-color: var(--Bright-Blue);
+}
+
+.taskInp::placeholder{
+    color: var(--Dark-Grayish-Blue);
 }
 
 .tasks{
@@ -79,16 +102,89 @@ main{
     background-color: var(--Very-Dark-Desaturated-Blue);
     color: var(--Light-Grayish-Blue);
     border: none;
+    border-radius: 10px;
+}
+
+.taskInp-l {
+    border-radius: 10px;
+    background-color: var(--Very-Light-Gray-L);
+    color: var(--Very-Dark-Blue);
+}
+
+.taskInp-l>ul>li>div>p{
+    color: var(--Very-Dark-Blue);
+}
+
+.taskInp-l>ul>li>div>span, .taskInp-l>span{
+    background-color: var(--Very-Light-Gray-L);
+}
+
+.taskInp-l>ul>li>div>span:hover, .taskInp-l>span:hover {
+    background-image: linear-gradient(var(--Very-Light-Gray-L)), radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.newTask{
+    display: flex;
+    align-items: center;
+}
+
+.newTask .checkmark{
+    width: 1rem;
+    height: 1rem;
+    margin-left: 1rem;
+    position: absolute;
 }
 
 .tasks-list{
+    color: var(--Light-Grayish-Blue);
     list-style: none;
     font-size: 1rem;
 }
 
 .listItem{
     border-bottom: 1px solid var(--Very-Dark-Grayish-Blue-1);
-    padding: 1rem 1rem 1rem 4rem;
+    padding: 1rem 1rem 1rem 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.listItem div{
+    display: flex;
+    gap: 1rem;
+}
+
+.listItem div:hover ~ .cross{
+    display: block;
+}
+
+.cross{
+    display: none;
+}
+
+.listItem p:hover{
+    cursor: pointer;
+    color: var(--Very-Dark-Grayish-Blue-1);
+    text-decoration: line-through;
+}
+
+.checkmark {
+    display: inline-flex;
+    border: solid 1px var(--Dark-Grayish-Blue);
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    border-radius: 100%;
+}
+
+.checkmark:hover{
+    cursor: pointer;
+    border-color: transparent;
+    background-image: linear-gradient(var(--Very-Dark-Desaturated-Blue)), radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 
 .foot{
@@ -97,9 +193,27 @@ main{
     font-size: 0.8rem;
     justify-content: space-between;
     padding: 1.5rem;
+    font-weight: 600;
+}
+
+#changeTheme:hover{
+    cursor: pointer;
 }
 
 .foot>div{
     display: flex;
     gap: 1rem;
+}
+
+.foot .clear:hover, .foot div p:hover{
+    cursor: pointer;
+    color: var(--Light-Grayish-Blue);
+}
+
+.left{
+    color: var(--Very-Dark-Grayish-Blue-1);
+}
+
+.foot-l .clear:hover, .foot-l div p:hover{
+    color: var(--Bright-Blue);
 }
